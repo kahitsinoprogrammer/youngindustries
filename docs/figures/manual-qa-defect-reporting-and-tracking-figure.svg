@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Manual QA Defect Reporting and Tracking Figure</title>
+  <desc id="desc">A simple diagram showing how a failed manual test case becomes a triaged defect, then moves through fix, retest, and closure.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5efe7; }
+      .panel { fill: #fffdf8; stroke: #2d3a31; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2d3a31; stroke-width: 2; rx: 14; ry: 14; }
+      .blue { fill: #eef6ff; stroke: #2a5b84; stroke-width: 2; rx: 14; ry: 14; }
+      .amber { fill: #fff4e8; stroke: #9e5c15; stroke-width: 2; rx: 14; ry: 14; }
+      .green { fill: #edf8ef; stroke: #2f6b3d; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2d3a31; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #6f796d; stroke-width: 2; fill: none; stroke-dasharray: 8 8; marker-end: url(#arrowSoft); }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #243028; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #243028; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #3a483f; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3a31"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f796d"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760"/>
+
+  <text class="title" x="40" y="54">Manual QA: Defect Reporting and Tracking</text>
+  <text class="text" x="40" y="82">A failed MQA case should become a reproducible, evidence-backed defect that can be triaged, fixed, retested, and closed with confidence.</text>
+
+  <rect class="panel" x="36" y="120" width="1128" height="590"/>
+
+  <rect class="box" x="70" y="260" width="220" height="110"/>
+  <text class="h2" x="95" y="292">Failed Test Case</text>
+  <text class="mono" x="95" y="320">MQA-CHK-001</text>
+  <text class="small" x="95" y="344">actual != expected</text>
+
+  <rect class="blue" x="350" y="220" width="240" height="190"/>
+  <text class="h2" x="375" y="252">Defect Report</text>
+  <text class="small" x="375" y="278">summary, module, severity,</text>
+  <text class="small" x="375" y="300">priority, role, steps,</text>
+  <text class="small" x="375" y="322">expected, actual, evidence,</text>
+  <text class="small" x="375" y="344">record IDs, API payloads</text>
+
+  <rect class="amber" x="650" y="220" width="220" height="190"/>
+  <text class="h2" x="676" y="252">Triage</text>
+  <text class="small" x="676" y="278">is it reproducible?</text>
+  <text class="small" x="676" y="300">what module?</text>
+  <text class="small" x="676" y="322">what severity and priority?</text>
+  <text class="small" x="676" y="344">who owns the fix?</text>
+
+  <rect class="green" x="930" y="220" width="180" height="190"/>
+  <text class="h2" x="961" y="252">Fix Flow</text>
+  <text class="small" x="961" y="278">Open</text>
+  <text class="small" x="961" y="300">In Progress</text>
+  <text class="small" x="961" y="322">Ready for QA</text>
+  <text class="small" x="961" y="344">Retest</text>
+  <text class="small" x="961" y="366">Verified / Reopened</text>
+
+  <path class="line" d="M 290 315 L 350 315"/>
+  <path class="line" d="M 590 315 L 650 315"/>
+  <path class="line" d="M 870 315 L 930 315"/>
+
+  <rect class="blue" x="110" y="500" width="260" height="120"/>
+  <text class="h2" x="136" y="532">Repo-Specific Context</text>
+  <text class="small" x="136" y="558">inventory, imports, reports,</text>
+  <text class="small" x="136" y="580">asset request, tech support,</text>
+  <text class="small" x="136" y="602">REST API, Jira, Firebase</text>
+
+  <rect class="amber" x="450" y="500" width="300" height="120"/>
+  <text class="h2" x="477" y="532">Evidence Pack</text>
+  <text class="small" x="477" y="558">screenshots, URLs, API requests,</text>
+  <text class="small" x="477" y="580">responses, CSV files, Jira keys,</text>
+  <text class="small" x="477" y="602">Firebase document IDs</text>
+
+  <rect class="green" x="830" y="500" width="240" height="120"/>
+  <text class="h2" x="857" y="532">Closure Rule</text>
+  <text class="small" x="857" y="558">do not close until QA reruns</text>
+  <text class="small" x="857" y="580">the original failing scenario</text>
+
+  <path class="soft" d="M 470 410 L 470 500"/>
+  <path class="soft" d="M 760 410 L 760 500"/>
+  <path class="soft" d="M 1020 410 L 1020 500"/>
+</svg>

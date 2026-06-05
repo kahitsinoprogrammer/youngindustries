@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">REST API Request and Response Format Figure</title>
+  <desc id="desc">A simple diagram showing request formats flowing into /api/v1 and the main response shapes coming back out.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f3efe7; }
+      .panel { fill: #fffdf8; stroke: #2d3a31; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2d3a31; stroke-width: 2; rx: 14; ry: 14; }
+      .blue { fill: #eef6ff; stroke: #2a5b84; stroke-width: 2; rx: 14; ry: 14; }
+      .amber { fill: #fff4e8; stroke: #9e5c15; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2d3a31; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #6f796d; stroke-width: 2; fill: none; stroke-dasharray: 8 8; marker-end: url(#arrowSoft); }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #243028; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #243028; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #3a483f; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3a31"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f796d"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="780"/>
+
+  <text class="title" x="40" y="54">REST API Integration: Request/Response Format</text>
+  <text class="text" x="40" y="82">Requests into /api/v1 are not all the same, and responses come back in several real shapes: envelope, datatable, raw JSON, empty body, or binary.</text>
+
+  <rect class="panel" x="36" y="120" width="1128" height="620"/>
+
+  <rect class="box" x="470" y="150" width="260" height="86"/>
+  <text class="h2" x="542" y="184">API Core</text>
+  <text class="mono" x="535" y="210">/api/v1</text>
+
+  <rect class="blue" x="70" y="285" width="270" height="118"/>
+  <text class="h2" x="94" y="317">Query Request</text>
+  <text class="mono" x="94" y="345">search, offset, sort, order</text>
+  <text class="mono" x="94" y="367">filter={...json...}</text>
+
+  <rect class="blue" x="70" y="445" width="270" height="118"/>
+  <text class="h2" x="94" y="477">Flat Body Request</text>
+  <text class="mono" x="94" y="505">note, summary, model_id</text>
+  <text class="mono" x="94" y="527">assigned_user, status_id</text>
+
+  <rect class="blue" x="70" y="605" width="270" height="92"/>
+  <text class="h2" x="94" y="637">Multipart Request</text>
+  <text class="mono" x="94" y="665">file[] or files[]</text>
+
+  <path class="line" d="M 340 344 L 470 194"/>
+  <path class="line" d="M 340 504 L 470 194"/>
+  <path class="line" d="M 340 651 L 470 194"/>
+
+  <rect class="box" x="470" y="300" width="260" height="92"/>
+  <text class="h2" x="492" y="332">Standard Envelope</text>
+  <text class="mono" x="492" y="360">status + messages + payload</text>
+
+  <rect class="box" x="470" y="430" width="260" height="92"/>
+  <text class="h2" x="495" y="462">Datatable Response</text>
+  <text class="mono" x="495" y="490">total + rows</text>
+
+  <rect class="amber" x="470" y="560" width="260" height="118"/>
+  <text class="h2" x="494" y="592">Special Cases</text>
+  <text class="mono" x="494" y="620">{"message": ...}</text>
+  <text class="mono" x="494" y="642">204 empty body, binary file</text>
+
+  <path class="soft" d="M 600 236 L 600 300"/>
+  <path class="soft" d="M 600 392 L 600 430"/>
+  <path class="soft" d="M 600 522 L 600 560"/>
+
+  <rect class="box" x="820" y="285" width="300" height="118"/>
+  <text class="h2" x="846" y="317">Envelope Examples</text>
+  <text class="mono" x="846" y="345">POST /notes/{asset}/store</text>
+  <text class="mono" x="846" y="367">POST /hardware/{id}/checkout</text>
+
+  <rect class="box" x="820" y="445" width="300" height="118"/>
+  <text class="h2" x="847" y="477">Datatable Examples</text>
+  <text class="mono" x="847" y="505">GET /hardware</text>
+  <text class="mono" x="847" y="527">GET /hardware/{id}/files</text>
+
+  <rect class="amber" x="820" y="605" width="300" height="92"/>
+  <text class="h2" x="844" y="637">Special Examples</text>
+  <text class="mono" x="844" y="665">GET file, POST imports, 204 token delete</text>
+
+  <path class="line" d="M 730 346 L 820 344"/>
+  <path class="line" d="M 730 476 L 820 504"/>
+  <path class="line" d="M 730 619 L 820 651"/>
+
+  <rect class="amber" x="820" y="150" width="300" height="90"/>
+  <text class="h2" x="847" y="182">Integration Warning</text>
+  <text class="small" x="847" y="206">Do not assume one JSON shape.</text>
+  <text class="small" x="847" y="226">Check both HTTP code and body fields.</text>
+</svg>

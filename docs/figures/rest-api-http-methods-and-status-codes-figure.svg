@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="780" viewBox="0 0 1200 780" role="img" aria-labelledby="title desc">
+  <title id="title">REST API HTTP Methods and Status Codes Figure</title>
+  <desc id="desc">A simple diagram showing the main HTTP methods used by the REST API and the most important status code patterns.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4f0e7; }
+      .panel { fill: #fffdf8; stroke: #2d3a31; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2d3a31; stroke-width: 2; rx: 14; ry: 14; }
+      .blue { fill: #eef6ff; stroke: #2a5b84; stroke-width: 2; rx: 14; ry: 14; }
+      .amber { fill: #fff3e7; stroke: #9d5b17; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2d3a31; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #6f796d; stroke-width: 2; fill: none; stroke-dasharray: 8 8; marker-end: url(#arrowSoft); }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #233028; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #233028; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #3b483f; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3a31"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f796d"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="780"/>
+
+  <text class="title" x="40" y="54">REST API: HTTP Methods and Status Codes</text>
+  <text class="text" x="40" y="82">The API uses standard verbs, but the runtime meaning is pragmatic: POST handles many business actions, and 200 does not always mean success.</text>
+
+  <rect class="panel" x="36" y="120" width="1128" height="620"/>
+
+  <rect class="box" x="470" y="150" width="260" height="86"/>
+  <text class="h2" x="544" y="184">API Core</text>
+  <text class="mono" x="535" y="210">/api/v1</text>
+
+  <rect class="blue" x="70" y="290" width="250" height="94"/>
+  <text class="h2" x="94" y="322">GET</text>
+  <text class="small" x="94" y="346">read, list, lookup, helper</text>
+  <text class="small" x="94" y="366">download and report reads</text>
+
+  <rect class="blue" x="70" y="414" width="250" height="94"/>
+  <text class="h2" x="94" y="446">POST</text>
+  <text class="small" x="94" y="470">create + action endpoints</text>
+  <text class="small" x="94" y="490">checkout, audit, restore, process</text>
+
+  <rect class="blue" x="70" y="538" width="250" height="74"/>
+  <text class="h2" x="94" y="570">PUT / PATCH</text>
+  <text class="small" x="94" y="594">update resources and nested items</text>
+
+  <rect class="blue" x="70" y="642" width="250" height="74"/>
+  <text class="h2" x="94" y="674">DELETE</text>
+  <text class="small" x="94" y="698">remove, detach, revoke</text>
+
+  <path class="line" d="M 320 337 L 470 194"/>
+  <path class="line" d="M 320 461 L 470 194"/>
+  <path class="line" d="M 320 575 L 470 194"/>
+  <path class="line" d="M 320 679 L 470 194"/>
+
+  <rect class="box" x="470" y="320" width="260" height="94"/>
+  <text class="h2" x="494" y="352">Method Reality</text>
+  <text class="small" x="494" y="376">resource routes + action routes</text>
+  <text class="small" x="494" y="396">hybrid REST design</text>
+
+  <rect class="amber" x="470" y="454" width="260" height="170"/>
+  <text class="h2" x="497" y="486">Explicit Status Codes</text>
+  <text class="mono" x="497" y="514">200  204  400  403</text>
+  <text class="mono" x="497" y="538">404  422  500</text>
+  <text class="small" x="497" y="568">No explicit 201 or 202 found</text>
+  <text class="small" x="497" y="588">in the reviewed API controllers</text>
+
+  <rect class="amber" x="820" y="250" width="300" height="118"/>
+  <text class="h2" x="845" y="282">Important Pattern</text>
+  <text class="small" x="845" y="306">200 can mean:</text>
+  <text class="mono" x="845" y="332">status=success</text>
+  <text class="mono" x="845" y="354">status=error</text>
+
+  <rect class="box" x="820" y="420" width="300" height="118"/>
+  <text class="h2" x="845" y="452">Clear HTTP-Native Cases</text>
+  <text class="mono" x="845" y="478">204 token revoke</text>
+  <text class="mono" x="845" y="500">404 fallback / missing file</text>
+
+  <rect class="amber" x="820" y="590" width="300" height="96"/>
+  <text class="h2" x="847" y="622">Client Rule</text>
+  <text class="small" x="847" y="646">Check both HTTP code</text>
+  <text class="small" x="847" y="666">and JSON body status fields.</text>
+
+  <path class="line" d="M 730 367 L 820 309"/>
+  <path class="line" d="M 730 539 L 820 479"/>
+  <path class="soft" d="M 730 575 L 820 638"/>
+</svg>

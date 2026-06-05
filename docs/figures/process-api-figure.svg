@@ -1,0 +1,114 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="920" viewBox="0 0 1400 920" role="img" aria-labelledby="title desc">
+  <title id="title">Snipe-IT Process API Figure</title>
+  <desc id="desc">A stick-figure workflow diagram showing users and admins moving through request, checkout, audit, import, and evidence processes via the Process API layer.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5efe3; }
+      .panel { fill: #fffdf8; stroke: #352f29; stroke-width: 3; }
+      .warm { fill: #ffe2b8; stroke: #352f29; stroke-width: 3; }
+      .cool { fill: #d8efef; stroke: #352f29; stroke-width: 3; }
+      .rose { fill: #f7d8cf; stroke: #352f29; stroke-width: 3; }
+      .mint { fill: #dff0d8; stroke: #352f29; stroke-width: 3; }
+      .title { font: 700 34px "Trebuchet MS", Verdana, sans-serif; fill: #2b2723; }
+      .label { font: 700 22px "Trebuchet MS", Verdana, sans-serif; fill: #2b2723; }
+      .body { font: 18px "Trebuchet MS", Verdana, sans-serif; fill: #2b2723; }
+      .small { font: 16px "Trebuchet MS", Verdana, sans-serif; fill: #2b2723; }
+      .tiny { font: 15px "Trebuchet MS", Verdana, sans-serif; fill: #2b2723; }
+      .muted { fill: #6d655d; }
+      .line { stroke: #2b2723; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .arrowA { stroke: #bd5b16; stroke-width: 4; fill: none; marker-end: url(#arrowA); }
+      .arrowB { stroke: #1f6f70; stroke-width: 4; fill: none; marker-end: url(#arrowB); }
+      .arrowC { stroke: #7b4d9d; stroke-width: 4; fill: none; marker-end: url(#arrowC); }
+    </style>
+    <marker id="arrowA" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#bd5b16" />
+    </marker>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#1f6f70" />
+    </marker>
+    <marker id="arrowC" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7b4d9d" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="920" />
+  <text class="title" x="700" y="58" text-anchor="middle">Snipe-IT Process APIs</text>
+  <text class="body muted" x="700" y="92" text-anchor="middle">Workflow-oriented APIs that move records through request, issue, return, audit, import, and evidence steps</text>
+
+  <rect class="warm" x="45" y="145" width="250" height="245" rx="18" ry="18" />
+  <text class="label" x="170" y="182" text-anchor="middle">Requester</text>
+  <circle class="line" cx="170" cy="230" r="26" />
+  <line class="line" x1="170" y1="256" x2="170" y2="315" />
+  <line class="line" x1="132" y1="279" x2="208" y2="279" />
+  <line class="line" x1="170" y1="315" x2="140" y2="365" />
+  <line class="line" x1="170" y1="315" x2="200" y2="365" />
+  <text class="small" x="170" y="420" text-anchor="middle">requestable hardware</text>
+  <text class="small muted" x="170" y="445" text-anchor="middle">submit or cancel request</text>
+
+  <rect class="cool" x="45" y="458" width="250" height="245" rx="18" ry="18" />
+  <text class="label" x="170" y="495" text-anchor="middle">Custodian</text>
+  <circle class="line" cx="170" cy="543" r="26" />
+  <line class="line" x1="170" y1="569" x2="170" y2="628" />
+  <line class="line" x1="132" y1="592" x2="208" y2="592" />
+  <line class="line" x1="170" y1="628" x2="140" y2="678" />
+  <line class="line" x1="170" y1="628" x2="200" y2="678" />
+  <text class="small" x="170" y="733" text-anchor="middle">checkout and checkin</text>
+  <text class="small muted" x="170" y="758" text-anchor="middle">hardware, accessories, components</text>
+
+  <rect class="rose" x="350" y="130" width="310" height="240" rx="18" ry="18" />
+  <text class="label" x="505" y="170" text-anchor="middle">Process API Layer</text>
+  <text class="body" x="505" y="208" text-anchor="middle">/api/v1 action endpoints</text>
+  <text class="tiny" x="380" y="255">request, checkout, checkin, audit</text>
+  <text class="tiny" x="380" y="282">imports, notes, files, restore</text>
+  <text class="tiny" x="380" y="309">ldapsync, two_factor_reset</text>
+  <text class="tiny muted" x="380" y="343">Process APIs sit above raw resource CRUD</text>
+
+  <rect class="panel" x="350" y="425" width="310" height="280" rx="18" ry="18" />
+  <text class="label" x="505" y="465" text-anchor="middle">Main Flows</text>
+  <text class="tiny" x="380" y="512">1. Request asset</text>
+  <text class="tiny" x="380" y="540">2. Issue item</text>
+  <text class="tiny" x="380" y="568">3. Return item</text>
+  <text class="tiny" x="380" y="596">4. Audit and update location</text>
+  <text class="tiny" x="380" y="624">5. Import CSV data</text>
+  <text class="tiny" x="380" y="652">6. Attach notes and files</text>
+  <text class="tiny" x="380" y="680">7. Restore archived records</text>
+
+  <rect class="mint" x="720" y="122" width="300" height="210" rx="18" ry="18" />
+  <text class="label" x="870" y="162" text-anchor="middle">Business State</text>
+  <text class="tiny" x="750" y="210">requested</text>
+  <text class="tiny" x="750" y="238">checked out</text>
+  <text class="tiny" x="750" y="266">checked in</text>
+  <text class="tiny" x="750" y="294">audited</text>
+
+  <rect class="mint" x="720" y="380" width="300" height="210" rx="18" ry="18" />
+  <text class="label" x="870" y="420" text-anchor="middle">Operational State</text>
+  <text class="tiny" x="750" y="468">import staged</text>
+  <text class="tiny" x="750" y="496">import processed</text>
+  <text class="tiny" x="750" y="524">note added</text>
+  <text class="tiny" x="750" y="552">file uploaded</text>
+
+  <rect class="panel" x="1085" y="140" width="250" height="220" rx="18" ry="18" />
+  <text class="label" x="1210" y="182" text-anchor="middle">Project Records</text>
+  <text class="tiny" x="1115" y="228">assets</text>
+  <text class="tiny" x="1115" y="256">accessories</text>
+  <text class="tiny" x="1115" y="284">components</text>
+  <text class="tiny" x="1115" y="312">consumables</text>
+  <text class="tiny" x="1115" y="340">users, models, locations</text>
+
+  <rect class="panel" x="1085" y="438" width="250" height="220" rx="18" ry="18" />
+  <text class="label" x="1210" y="480" text-anchor="middle">Evidence and Logs</text>
+  <text class="tiny" x="1115" y="526">action_logs</text>
+  <text class="tiny" x="1115" y="554">uploaded files</text>
+  <text class="tiny" x="1115" y="582">audit history</text>
+  <text class="tiny" x="1115" y="610">import files</text>
+
+  <path class="arrowA" d="M295 265 C320 265, 325 255, 350 255" />
+  <path class="arrowB" d="M295 575 C325 575, 330 575, 350 575" />
+  <path class="arrowC" d="M660 252 C690 252, 690 228, 720 228" />
+  <path class="arrowA" d="M660 560 C690 560, 690 486, 720 486" />
+  <path class="arrowB" d="M1020 228 C1050 228, 1050 245, 1085 245" />
+  <path class="arrowC" d="M1020 486 C1050 486, 1050 543, 1085 543" />
+  <path class="arrowA" d="M870 332 C870 350, 870 360, 870 380" />
+
+  <text class="small muted" x="700" y="865" text-anchor="middle">Think of this layer as the system’s verbs: request, issue, return, audit, import, attach, restore</text>
+</svg>

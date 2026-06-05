@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="980" viewBox="0 0 1440 980" role="img" aria-labelledby="title desc">
+  <title id="title">Topic Design Figure</title>
+  <desc id="desc">A simple topic map showing the core asset domain in the center, surrounded by people, metadata, reporting, identity, configuration, import, and custom extension topics.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f0e6; }
+      .panel { fill: #fffdf9; stroke: #342f2a; stroke-width: 3; }
+      .core { fill: #ffe0a8; stroke: #342f2a; stroke-width: 3; }
+      .support { fill: #dbeeee; stroke: #342f2a; stroke-width: 3; }
+      .ext { fill: #f7d8cf; stroke: #342f2a; stroke-width: 3; }
+      .ops { fill: #dff0d8; stroke: #342f2a; stroke-width: 3; }
+      .title { font: 700 34px "Trebuchet MS", Verdana, sans-serif; fill: #292522; }
+      .label { font: 700 21px "Trebuchet MS", Verdana, sans-serif; fill: #292522; }
+      .body { font: 18px "Trebuchet MS", Verdana, sans-serif; fill: #292522; }
+      .tiny { font: 15px "Trebuchet MS", Verdana, sans-serif; fill: #292522; }
+      .muted { fill: #6b645d; }
+      .arrowA { stroke: #bf5f1c; stroke-width: 4; fill: none; marker-end: url(#arrowA); }
+      .arrowB { stroke: #216f70; stroke-width: 4; fill: none; marker-end: url(#arrowB); }
+      .arrowC { stroke: #7d4a97; stroke-width: 4; fill: none; marker-end: url(#arrowC); }
+    </style>
+    <marker id="arrowA" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#bf5f1c" />
+    </marker>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#216f70" />
+    </marker>
+    <marker id="arrowC" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7d4a97" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="980" />
+  <text class="title" x="720" y="60" text-anchor="middle">Topic Design</text>
+  <text class="body muted" x="720" y="94" text-anchor="middle">The codebase organized by major subject areas rather than only by routes or workflows</text>
+
+  <rect class="core" x="515" y="320" width="410" height="210" rx="20" ry="20" />
+  <text class="label" x="720" y="365" text-anchor="middle">Core Asset Domain</text>
+  <text class="tiny" x="560" y="410">Asset Inventory</text>
+  <text class="tiny" x="560" y="438">Peripheral Inventory</text>
+  <text class="tiny" x="560" y="466">Circulation and Acceptance</text>
+  <text class="tiny" x="560" y="494">People and Ownership</text>
+
+  <rect class="support" x="165" y="170" width="280" height="150" rx="18" ry="18" />
+  <text class="label" x="305" y="215" text-anchor="middle">Classification</text>
+  <text class="tiny" x="195" y="258">categories</text>
+  <text class="tiny" x="195" y="286">manufacturers</text>
+  <text class="tiny" x="195" y="314">suppliers, custom fields</text>
+
+  <rect class="support" x="990" y="170" width="280" height="150" rx="18" ry="18" />
+  <text class="label" x="1130" y="215" text-anchor="middle">Reporting and History</text>
+  <text class="tiny" x="1020" y="258">action logs</text>
+  <text class="tiny" x="1020" y="286">reports</text>
+  <text class="tiny" x="1020" y="314">templates and activity</text>
+
+  <rect class="support" x="135" y="585" width="300" height="160" rx="18" ry="18" />
+  <text class="label" x="285" y="630" text-anchor="middle">Files and Labels</text>
+  <text class="tiny" x="165" y="673">uploads</text>
+  <text class="tiny" x="165" y="701">labels, QR, barcodes</text>
+
+  <rect class="ops" x="975" y="575" width="310" height="175" rx="18" ry="18" />
+  <text class="label" x="1130" y="620" text-anchor="middle">Identity and Platform Ops</text>
+  <text class="tiny" x="1005" y="663">SAML, LDAP, SCIM</text>
+  <text class="tiny" x="1005" y="691">settings, setup, backups</text>
+  <text class="tiny" x="1005" y="719">tokens and two-factor</text>
+
+  <rect class="ops" x="555" y="625" width="330" height="165" rx="18" ry="18" />
+  <text class="label" x="720" y="670" text-anchor="middle">Import and Onboarding</text>
+  <text class="tiny" x="585" y="713">CSV uploads</text>
+  <text class="tiny" x="585" y="741">mapping and preview</text>
+
+  <rect class="ext" x="145" y="390" width="280" height="150" rx="18" ry="18" />
+  <text class="label" x="285" y="435" text-anchor="middle">Asset Request Extension</text>
+  <text class="tiny" x="175" y="478">Mongo-backed requests</text>
+  <text class="tiny" x="175" y="506">approvals and chatbot</text>
+
+  <rect class="ext" x="1015" y="390" width="250" height="150" rx="18" ry="18" />
+  <text class="label" x="1140" y="435" text-anchor="middle">Tech Support Extension</text>
+  <text class="tiny" x="1045" y="478">Firebase helpdesk</text>
+  <text class="tiny" x="1045" y="506">Jira ticketing</text>
+
+  <rect class="support" x="570" y="150" width="300" height="115" rx="18" ry="18" />
+  <text class="label" x="720" y="194" text-anchor="middle">Notifications and Events</text>
+  <text class="tiny" x="602" y="235">mail, webhooks, action logs</text>
+
+  <path class="arrowA" d="M445 245 C480 245, 500 300, 540 340" />
+  <path class="arrowB" d="M990 245 C955 245, 940 300, 900 340" />
+  <path class="arrowC" d="M435 465 C470 465, 500 450, 515 445" />
+  <path class="arrowA" d="M1015 465 C980 465, 950 450, 925 445" />
+  <path class="arrowB" d="M285 585 C370 560, 450 525, 540 500" />
+  <path class="arrowC" d="M1130 575 C1040 555, 980 530, 900 500" />
+  <path class="arrowA" d="M720 625 C720 590, 720 565, 720 530" />
+  <path class="arrowB" d="M720 265 C720 285, 720 300, 720 320" />
+
+  <text class="body muted" x="720" y="900" text-anchor="middle">The center of the system is asset management; surrounding topics classify, secure, observe, extend, and operate it</text>
+</svg>

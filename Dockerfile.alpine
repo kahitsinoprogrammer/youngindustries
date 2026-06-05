@@ -77,8 +77,6 @@ RUN COMPOSER_CACHE_DIR=/dev/null composer install --working-dir=/var/www/html
 
 USER root
 
-VOLUME ["/var/lib/snipeit"]
-
 # Startup script
 COPY docker/startup_alpine.sh /startup.sh
 RUN chmod +x /startup.sh

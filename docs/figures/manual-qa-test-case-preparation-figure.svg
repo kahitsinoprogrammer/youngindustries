@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Manual QA Test Case Preparation Figure</title>
+  <desc id="desc">A simple diagram showing how source flows, environments, roles, and data packs become a prepared manual QA test suite.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4efe6; }
+      .panel { fill: #fffdf8; stroke: #2d3a31; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2d3a31; stroke-width: 2; rx: 14; ry: 14; }
+      .blue { fill: #eef6ff; stroke: #2a5b84; stroke-width: 2; rx: 14; ry: 14; }
+      .amber { fill: #fff4e8; stroke: #9e5c15; stroke-width: 2; rx: 14; ry: 14; }
+      .green { fill: #edf8ef; stroke: #2f6b3d; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2d3a31; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #6f796d; stroke-width: 2; fill: none; stroke-dasharray: 8 8; marker-end: url(#arrowSoft); }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #243028; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #243028; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #3a483f; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3a31"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6f796d"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760"/>
+
+  <text class="title" x="40" y="54">Manual QA: Test Case Preparation</text>
+  <text class="text" x="40" y="82">The goal is to turn real routes, workflows, roles, and integrations into a reusable manual QA pack before execution starts.</text>
+
+  <rect class="panel" x="36" y="120" width="1128" height="600"/>
+
+  <rect class="box" x="70" y="190" width="240" height="120"/>
+  <text class="h2" x="92" y="222">Source Inputs</text>
+  <text class="small" x="92" y="248">routes, controllers, docs, tests</text>
+  <text class="small" x="92" y="270">inventory + custom flows</text>
+
+  <rect class="blue" x="70" y="360" width="240" height="120"/>
+  <text class="h2" x="92" y="392">Environment Pack</text>
+  <text class="small" x="92" y="418">DB, storage, sample files,</text>
+  <text class="small" x="92" y="440">Firebase, Jira, Mongo, mail</text>
+
+  <rect class="blue" x="70" y="530" width="240" height="120"/>
+  <text class="h2" x="92" y="562">Role + Data Pack</text>
+  <text class="small" x="92" y="588">superuser, admin, user,</text>
+  <text class="small" x="92" y="610">approver, tech support</text>
+
+  <rect class="box" x="470" y="150" width="260" height="86"/>
+  <text class="h2" x="522" y="184">Preparation Core</text>
+  <text class="mono" x="506" y="210">test case template</text>
+
+  <rect class="amber" x="470" y="290" width="260" height="118"/>
+  <text class="h2" x="500" y="322">Coverage Selection</text>
+  <text class="small" x="500" y="348">smoke, P0, P1, negative,</text>
+  <text class="small" x="500" y="370">role, integration cases</text>
+
+  <rect class="amber" x="470" y="460" width="260" height="138"/>
+  <text class="h2" x="493" y="492">Prepared QA Catalog</text>
+  <text class="small" x="493" y="518">auth, checkout, imports,</text>
+  <text class="small" x="493" y="540">acceptance, reports,</text>
+  <text class="small" x="493" y="562">asset request, tech support</text>
+
+  <rect class="green" x="860" y="220" width="240" height="120"/>
+  <text class="h2" x="892" y="252">Execution-Ready Pack</text>
+  <text class="small" x="892" y="278">ID, preconditions, steps,</text>
+  <text class="small" x="892" y="300">expected result, evidence</text>
+
+  <rect class="green" x="860" y="430" width="240" height="140"/>
+  <text class="h2" x="889" y="462">Evidence Plan</text>
+  <text class="small" x="889" y="488">screenshots, created IDs,</text>
+  <text class="small" x="889" y="510">downloads, API captures,</text>
+  <text class="small" x="889" y="532">Jira keys, Firebase docs</text>
+
+  <path class="line" d="M 310 250 L 470 193"/>
+  <path class="line" d="M 310 420 L 470 344"/>
+  <path class="line" d="M 310 590 L 470 530"/>
+
+  <path class="soft" d="M 600 236 L 600 290"/>
+  <path class="soft" d="M 600 408 L 600 460"/>
+
+  <path class="line" d="M 730 344 L 860 280"/>
+  <path class="line" d="M 730 530 L 860 500"/>
+
+  <rect class="amber" x="860" y="610" width="240" height="72"/>
+  <text class="small" x="887" y="642">Prepare first, execute second.</text>
+  <text class="small" x="887" y="664">Stable data and roles save time.</text>
+</svg>

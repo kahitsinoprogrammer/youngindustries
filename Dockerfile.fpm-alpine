@@ -94,8 +94,6 @@ RUN set -eux; \
 	rm -f /usr/local/bin/composer; \
 	chown -R www-data:www-data /var/www/html;
 
-VOLUME [ "/var/lib/snipeit" ]
-
 COPY --chown=www-data:www-data docker/docker-secrets.env /var/www/html/.env
 COPY --chmod=655 docker/startup_alpine_fpm.sh /startup.sh
 COPY docker/column-statistics.cnf /etc/mysql/conf.d/column-statistics.cnf

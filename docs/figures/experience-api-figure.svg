@@ -1,0 +1,118 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="960" viewBox="0 0 1440 960" role="img" aria-labelledby="title desc">
+  <title id="title">Snipe-IT Experience API Figure</title>
+  <desc id="desc">A stick-figure style diagram showing users, admins, approvers, and support staff interacting with the web experience layer, which connects to views, Livewire components, process flows, and external services.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f4efe6; }
+      .panel { fill: #fffdf9; stroke: #35302b; stroke-width: 3; }
+      .gold { fill: #ffe0a8; stroke: #35302b; stroke-width: 3; }
+      .teal { fill: #d9efee; stroke: #35302b; stroke-width: 3; }
+      .coral { fill: #f8d7cd; stroke: #35302b; stroke-width: 3; }
+      .mint { fill: #ddefd8; stroke: #35302b; stroke-width: 3; }
+      .ink { fill: #2a2622; }
+      .title { font: 700 34px "Trebuchet MS", Verdana, sans-serif; fill: #2a2622; }
+      .label { font: 700 22px "Trebuchet MS", Verdana, sans-serif; fill: #2a2622; }
+      .body { font: 18px "Trebuchet MS", Verdana, sans-serif; fill: #2a2622; }
+      .small { font: 16px "Trebuchet MS", Verdana, sans-serif; fill: #2a2622; }
+      .tiny { font: 15px "Trebuchet MS", Verdana, sans-serif; fill: #2a2622; }
+      .muted { fill: #6e665f; }
+      .line { stroke: #2a2622; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .arrowA { stroke: #bd5c1b; stroke-width: 4; fill: none; marker-end: url(#arrowA); }
+      .arrowB { stroke: #206f70; stroke-width: 4; fill: none; marker-end: url(#arrowB); }
+      .arrowC { stroke: #7d4a97; stroke-width: 4; fill: none; marker-end: url(#arrowC); }
+    </style>
+    <marker id="arrowA" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#bd5c1b" />
+    </marker>
+    <marker id="arrowB" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#206f70" />
+    </marker>
+    <marker id="arrowC" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#7d4a97" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="960" />
+  <text class="title" x="720" y="58" text-anchor="middle">Snipe-IT Experience APIs</text>
+  <text class="body muted" x="720" y="92" text-anchor="middle">The browser-facing layer where pages, forms, Livewire, and guided journeys turn system capabilities into a product experience</text>
+
+  <rect class="gold" x="40" y="150" width="260" height="240" rx="18" ry="18" />
+  <text class="label" x="170" y="188" text-anchor="middle">Employee</text>
+  <circle class="line" cx="170" cy="238" r="27" />
+  <line class="line" x1="170" y1="265" x2="170" y2="325" />
+  <line class="line" x1="130" y1="288" x2="210" y2="288" />
+  <line class="line" x1="170" y1="325" x2="140" y2="374" />
+  <line class="line" x1="170" y1="325" x2="200" y2="374" />
+  <text class="small" x="170" y="425" text-anchor="middle">profile, assigned assets</text>
+  <text class="small muted" x="170" y="450" text-anchor="middle">requests, acceptances, tickets</text>
+
+  <rect class="teal" x="40" y="455" width="260" height="240" rx="18" ry="18" />
+  <text class="label" x="170" y="493" text-anchor="middle">Admin and Staff</text>
+  <circle class="line" cx="170" cy="543" r="27" />
+  <line class="line" x1="170" y1="570" x2="170" y2="630" />
+  <line class="line" x1="130" y1="593" x2="210" y2="593" />
+  <line class="line" x1="170" y1="630" x2="140" y2="679" />
+  <line class="line" x1="170" y1="630" x2="200" y2="679" />
+  <text class="small" x="170" y="730" text-anchor="middle">inventory workspace</text>
+  <text class="small muted" x="170" y="755" text-anchor="middle">settings, reports, approvals</text>
+
+  <rect class="coral" x="360" y="125" width="340" height="250" rx="18" ry="18" />
+  <text class="label" x="530" y="168" text-anchor="middle">Experience API Layer</text>
+  <text class="body" x="530" y="206" text-anchor="middle">web routes + controllers + views</text>
+  <text class="tiny" x="392" y="252">page rendering</text>
+  <text class="tiny" x="392" y="280">form submissions and redirects</text>
+  <text class="tiny" x="392" y="308">session state and flash messages</text>
+  <text class="tiny" x="392" y="336">modal helpers and file interactions</text>
+
+  <rect class="panel" x="360" y="430" width="340" height="300" rx="18" ry="18" />
+  <text class="label" x="530" y="470" text-anchor="middle">Experience Families</text>
+  <text class="tiny" x="392" y="516">login and setup</text>
+  <text class="tiny" x="392" y="544">dashboard and navigation</text>
+  <text class="tiny" x="392" y="572">inventory CRUD plus task pages</text>
+  <text class="tiny" x="392" y="600">self-service account pages</text>
+  <text class="tiny" x="392" y="628">asset request and chatbot</text>
+  <text class="tiny" x="392" y="656">tech support and ticketing</text>
+  <text class="tiny" x="392" y="684">reports, settings, backups</text>
+
+  <rect class="mint" x="770" y="120" width="295" height="220" rx="18" ry="18" />
+  <text class="label" x="918" y="160" text-anchor="middle">Interactive UI</text>
+  <text class="tiny" x="800" y="208">Blade pages</text>
+  <text class="tiny" x="800" y="236">breadcrumbs</text>
+  <text class="tiny" x="800" y="264">Livewire importer</text>
+  <text class="tiny" x="800" y="292">token management widget</text>
+
+  <rect class="mint" x="770" y="405" width="295" height="240" rx="18" ry="18" />
+  <text class="label" x="918" y="445" text-anchor="middle">Process Layer</text>
+  <text class="tiny" x="800" y="493">request</text>
+  <text class="tiny" x="800" y="521">checkout and checkin</text>
+  <text class="tiny" x="800" y="549">audit</text>
+  <text class="tiny" x="800" y="577">import</text>
+  <text class="tiny" x="800" y="605">notes and files</text>
+
+  <rect class="panel" x="1130" y="120" width="255" height="230" rx="18" ry="18" />
+  <text class="label" x="1258" y="160" text-anchor="middle">External Services</text>
+  <text class="tiny" x="1160" y="208">SAML</text>
+  <text class="tiny" x="1160" y="236">LDAP</text>
+  <text class="tiny" x="1160" y="264">Google login</text>
+  <text class="tiny" x="1160" y="292">MongoDB requests</text>
+  <text class="tiny" x="1160" y="320">Firebase helpdesk</text>
+  <text class="tiny" x="1160" y="348">Jira issue creation</text>
+
+  <rect class="panel" x="1130" y="430" width="255" height="230" rx="18" ry="18" />
+  <text class="label" x="1258" y="470" text-anchor="middle">Product Output</text>
+  <text class="tiny" x="1160" y="518">pages</text>
+  <text class="tiny" x="1160" y="546">forms</text>
+  <text class="tiny" x="1160" y="574">downloads</text>
+  <text class="tiny" x="1160" y="602">messages</text>
+  <text class="tiny" x="1160" y="630">guided journeys</text>
+
+  <path class="arrowA" d="M300 270 C330 270, 335 250, 360 250" />
+  <path class="arrowB" d="M300 580 C330 580, 335 580, 360 580" />
+  <path class="arrowC" d="M700 250 C735 250, 740 230, 770 230" />
+  <path class="arrowA" d="M700 585 C735 585, 740 525, 770 525" />
+  <path class="arrowB" d="M1065 230 C1090 230, 1100 230, 1130 230" />
+  <path class="arrowC" d="M1065 525 C1095 525, 1105 545, 1130 545" />
+  <path class="arrowA" d="M918 340 C918 365, 918 380, 918 405" />
+
+  <text class="small muted" x="720" y="885" text-anchor="middle">Experience APIs are the product-facing contract: the pages, widgets, and guided actions that people actually touch</text>
+</svg>

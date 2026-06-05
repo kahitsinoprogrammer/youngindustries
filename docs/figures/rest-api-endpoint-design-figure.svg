@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1180" height="760" viewBox="0 0 1180 760" role="img" aria-labelledby="title desc">
+  <title id="title">REST API Endpoint Design Figure</title>
+  <desc id="desc">A simple map of the endpoint families used in the REST API under /api/v1.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f5f1e8; }
+      .panel { fill: #fffdf8; stroke: #2d3a31; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2d3a31; stroke-width: 2; rx: 14; ry: 14; }
+      .alt { fill: #eef6ff; stroke: #2a5b84; stroke-width: 2; rx: 14; ry: 14; }
+      .warn { fill: #fff3e7; stroke: #9d5b17; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2d3a31; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #6d786d; stroke-width: 2; fill: none; marker-end: url(#arrowSoft); stroke-dasharray: 8 8; }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1b241e; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #233028; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #233028; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #3a483f; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2d3a31"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6d786d"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1180" height="760"/>
+
+  <text class="title" x="40" y="54">REST API Endpoint Design</text>
+  <text class="text" x="40" y="82">The API starts at /api/v1, then branches into resource, action, lookup, relationship, helper, and operational endpoint families.</text>
+
+  <rect class="panel" x="40" y="120" width="1100" height="590"/>
+
+  <rect class="box" x="465" y="150" width="250" height="84"/>
+  <text class="h2" x="533" y="184">Base Prefix</text>
+  <text class="mono" x="525" y="210">/api/v1</text>
+
+  <rect class="box" x="80" y="300" width="250" height="120"/>
+  <text class="h2" x="105" y="332">Collection + Item</text>
+  <text class="mono" x="105" y="360">GET /users</text>
+  <text class="mono" x="105" y="382">POST /users</text>
+  <text class="mono" x="105" y="404">GET /users/{user}</text>
+
+  <rect class="alt" x="370" y="300" width="250" height="120"/>
+  <text class="h2" x="394" y="332">Action Endpoints</text>
+  <text class="mono" x="394" y="360">POST /hardware/{id}/checkout</text>
+  <text class="mono" x="394" y="382">POST /hardware/{id}/checkin</text>
+  <text class="mono" x="394" y="404">POST /users/{user}/restore</text>
+
+  <rect class="box" x="660" y="300" width="250" height="120"/>
+  <text class="h2" x="692" y="332">Lookup + Helper</text>
+  <text class="mono" x="692" y="360">GET /hardware/bytag/{any}</text>
+  <text class="mono" x="692" y="382">GET /users/me</text>
+  <text class="mono" x="692" y="404">GET /locations/selectlist</text>
+
+  <rect class="alt" x="950" y="300" width="150" height="120"/>
+  <text class="h2" x="974" y="332">Fallback</text>
+  <text class="mono" x="972" y="360">404 JSON</text>
+  <text class="small" x="968" y="386">unknown endpoint</text>
+
+  <rect class="box" x="140" y="500" width="270" height="130"/>
+  <text class="h2" x="166" y="534">Relationship Endpoints</text>
+  <text class="mono" x="166" y="562">GET /users/{user}/assets</text>
+  <text class="mono" x="166" y="584">GET /hardware/{asset}/assigned/accessories</text>
+  <text class="small" x="166" y="608">Read linked records</text>
+
+  <rect class="box" x="455" y="500" width="270" height="130"/>
+  <text class="h2" x="486" y="534">Nested Resources</text>
+  <text class="mono" x="486" y="562">/licenses/{license}/seats</text>
+  <text class="mono" x="486" y="584">/kits/{kit_id}/models</text>
+  <text class="small" x="486" y="608">Child resources under a parent</text>
+
+  <rect class="alt" x="770" y="500" width="270" height="130"/>
+  <text class="h2" x="802" y="534">Generic Attachments</text>
+  <text class="mono" x="802" y="562">/{object_type}/{id}/files</text>
+  <text class="mono" x="802" y="584">/{object_type}/{id}/files/{file_id}</text>
+  <text class="small" x="802" y="608">Shared upload pattern across domains</text>
+
+  <path class="line" d="M 590 234 L 205 300"/>
+  <path class="line" d="M 590 234 L 495 300"/>
+  <path class="line" d="M 590 234 L 785 300"/>
+  <path class="soft" d="M 690 234 L 1025 300"/>
+
+  <path class="line" d="M 205 420 L 275 500"/>
+  <path class="line" d="M 495 420 L 590 500"/>
+  <path class="line" d="M 785 420 L 905 500"/>
+
+  <rect class="warn" x="860" y="150" width="250" height="90"/>
+  <text class="h2" x="888" y="182">Response Reality</text>
+  <text class="small" x="888" y="206">Most endpoints use:</text>
+  <text class="mono" x="888" y="228">status + messages + payload</text>
+
+  <rect class="warn" x="60" y="650" width="1060" height="40"/>
+  <text class="small" x="84" y="676">Design theme: mostly REST-shaped, but intentionally action-heavy for business transitions like checkout, checkin, audit, restore, and import processing.</text>
+</svg>

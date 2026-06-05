@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="760" viewBox="0 0 1200 760" role="img" aria-labelledby="title desc">
+  <title id="title">Jira Integration Figure</title>
+  <desc id="desc">A simple diagram showing how a tech support ticket moves from Snipe-IT to Jira after approval.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f6f4ec; }
+      .panel { fill: #fffdf6; stroke: #2f3b2f; stroke-width: 2; rx: 18; ry: 18; }
+      .box { fill: #ffffff; stroke: #2f3b2f; stroke-width: 2; rx: 14; ry: 14; }
+      .ext { fill: #eef7ff; stroke: #26547c; stroke-width: 2; rx: 14; ry: 14; }
+      .warn { fill: #fff4e8; stroke: #9a5b13; stroke-width: 2; rx: 14; ry: 14; }
+      .line { stroke: #2f3b2f; stroke-width: 3; fill: none; marker-end: url(#arrow); }
+      .soft { stroke: #7b8575; stroke-width: 2; fill: none; marker-end: url(#arrowSoft); stroke-dasharray: 8 8; }
+      .title { font: 700 28px 'Segoe UI', Tahoma, sans-serif; fill: #1c251c; }
+      .h2 { font: 700 18px 'Segoe UI', Tahoma, sans-serif; fill: #1c251c; }
+      .text { font: 15px 'Segoe UI', Tahoma, sans-serif; fill: #243024; }
+      .mono { font: 14px Consolas, 'Courier New', monospace; fill: #243024; }
+      .small { font: 13px 'Segoe UI', Tahoma, sans-serif; fill: #394739; }
+      .stick { stroke: #1c251c; stroke-width: 3; stroke-linecap: round; fill: none; }
+    </style>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#2f3b2f"/>
+    </marker>
+    <marker id="arrowSoft" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7b8575"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="760"/>
+
+  <text class="title" x="40" y="52">External System Integration: Jira</text>
+  <text class="text" x="40" y="82">Approved tech-support tickets become Jira issues, then the Jira key and URL are written back into the Firebase ticket.</text>
+
+  <rect class="panel" x="34" y="110" width="700" height="595"/>
+  <text class="h2" x="58" y="142">Inside Snipe-IT</text>
+
+  <circle class="stick" cx="100" cy="208" r="18"/>
+  <line class="stick" x1="100" y1="226" x2="100" y2="268"/>
+  <line class="stick" x1="75" y1="240" x2="125" y2="240"/>
+  <line class="stick" x1="100" y1="268" x2="80" y2="300"/>
+  <line class="stick" x1="100" y1="268" x2="120" y2="300"/>
+  <text class="h2" x="55" y="330">Requester</text>
+  <text class="small" x="52" y="352">Submits repair ticket</text>
+
+  <rect class="box" x="180" y="178" width="220" height="130"/>
+  <text class="h2" x="198" y="208">Request Ticket UI</text>
+  <text class="mono" x="198" y="236">POST /tech-support/request-ticket</text>
+  <text class="small" x="198" y="264">Validates summary, issue type,</text>
+  <text class="small" x="198" y="284">priority, requester, asset data</text>
+
+  <rect class="box" x="455" y="178" width="225" height="130"/>
+  <text class="h2" x="472" y="208">Firebase Ticket Record</text>
+  <text class="small" x="472" y="236">status = for approval</text>
+  <text class="small" x="472" y="256">stores requester, asset, ticket</text>
+  <text class="small" x="472" y="276">jira.issue_key initially blank</text>
+
+  <path class="line" d="M 120 240 L 180 240"/>
+  <path class="line" d="M 400 240 L 455 240"/>
+
+  <circle class="stick" cx="98" cy="465" r="18"/>
+  <line class="stick" x1="98" y1="483" x2="98" y2="525"/>
+  <line class="stick" x1="73" y1="497" x2="123" y2="497"/>
+  <line class="stick" x1="98" y1="525" x2="78" y2="557"/>
+  <line class="stick" x1="98" y1="525" x2="118" y2="557"/>
+  <text class="h2" x="42" y="586">Approver</text>
+  <text class="small" x="44" y="608">Approves ticket</text>
+
+  <rect class="box" x="180" y="425" width="220" height="135"/>
+  <text class="h2" x="198" y="455">Approval Flow</text>
+  <text class="mono" x="198" y="483">POST /tech-support/approve-ticket/{id}</text>
+  <text class="small" x="198" y="511">Only approved tickets call Jira</text>
+  <text class="small" x="198" y="531">Rejected tickets stop here</text>
+
+  <rect class="box" x="455" y="425" width="225" height="150"/>
+  <text class="h2" x="472" y="455">JiraIssueService</text>
+  <text class="small" x="472" y="483">Checks env config</text>
+  <text class="small" x="472" y="503">Maps issue type</text>
+  <text class="small" x="472" y="523">Builds Jira description document</text>
+  <text class="small" x="472" y="543">Posts to Jira REST API</text>
+
+  <path class="line" d="M 118 497 L 180 492"/>
+  <path class="line" d="M 400 492 L 455 500"/>
+
+  <rect class="box" x="180" y="605" width="500" height="74"/>
+  <text class="h2" x="198" y="635">Back in Snipe-IT</text>
+  <text class="small" x="198" y="658">If Jira creation succeeds, Firebase is updated with issue_id, issue_key, issue_url, and created_at.</text>
+
+  <rect class="panel" x="770" y="110" width="390" height="595"/>
+  <text class="h2" x="794" y="142">External System and Ops View</text>
+
+  <rect class="ext" x="815" y="188" width="300" height="150"/>
+  <text class="h2" x="840" y="220">Jira Cloud REST API v3</text>
+  <text class="mono" x="840" y="248">GET /rest/api/3/myself</text>
+  <text class="mono" x="840" y="270">GET /rest/api/3/project/{key}</text>
+  <text class="mono" x="840" y="292">GET /rest/api/3/mypermissions</text>
+  <text class="mono" x="840" y="314">POST /rest/api/3/issue</text>
+
+  <path class="line" d="M 680 500 C 760 500, 760 262, 815 262"/>
+  <path class="soft" d="M 815 292 C 760 292, 760 560, 680 640"/>
+
+  <rect class="ext" x="815" y="388" width="300" height="110"/>
+  <text class="h2" x="840" y="420">Diagnostics Screen</text>
+  <text class="mono" x="840" y="448">GET /tech-support/jira-diagnostics</text>
+  <text class="small" x="840" y="470">Checks config, user, project,</text>
+  <text class="small" x="840" y="490">permissions, and issue types</text>
+
+  <rect class="warn" x="815" y="548" width="300" height="110"/>
+  <text class="h2" x="840" y="580">Operational Risk</text>
+  <text class="small" x="840" y="608">Jira can succeed while Firebase writeback fails.</text>
+  <text class="small" x="840" y="628">That leaves a real Jira issue needing manual reconciliation.</text>
+
+  <text class="small" x="40" y="730">Config keys: JIRA_BASE_URL, JIRA_EMAIL, JIRA_API_TOKEN, JIRA_PROJECT_KEY, JIRA_TIMEOUT, and issue type mappings.</text>
+</svg>

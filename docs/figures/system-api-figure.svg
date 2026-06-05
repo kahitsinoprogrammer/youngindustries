@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="900" viewBox="0 0 1400 900" role="img" aria-labelledby="title desc">
+  <title id="title">Snipe-IT System API Figure</title>
+  <desc id="desc">A simple stick-figure style diagram showing clients calling the REST and SCIM APIs, which flow through Laravel controllers into domain models, database records, and uploaded files.</desc>
+  <defs>
+    <style>
+      .bg { fill: #f7f1e7; }
+      .panel { fill: #fffdf8; stroke: #3f3a34; stroke-width: 3; rx: 18; ry: 18; }
+      .soft { fill: #fff7ea; stroke: #3f3a34; stroke-width: 3; rx: 18; ry: 18; }
+      .title { font: 700 34px "Trebuchet MS", Verdana, sans-serif; fill: #2d2a26; }
+      .label { font: 700 22px "Trebuchet MS", Verdana, sans-serif; fill: #2d2a26; }
+      .body { font: 18px "Trebuchet MS", Verdana, sans-serif; fill: #2d2a26; }
+      .small { font: 16px "Trebuchet MS", Verdana, sans-serif; fill: #2d2a26; }
+      .tiny { font: 15px "Trebuchet MS", Verdana, sans-serif; fill: #2d2a26; }
+      .muted { fill: #6a645d; }
+      .line { stroke: #2d2a26; stroke-width: 4; stroke-linecap: round; stroke-linejoin: round; fill: none; }
+      .arrow { stroke: #c55a11; stroke-width: 4; stroke-linecap: round; fill: none; marker-end: url(#arrowhead); }
+      .arrow2 { stroke: #236c6a; stroke-width: 4; stroke-linecap: round; fill: none; marker-end: url(#arrowhead2); }
+      .accent { fill: #ffd89e; }
+      .accent2 { fill: #cae9e7; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#c55a11" />
+    </marker>
+    <marker id="arrowhead2" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M0,0 L12,6 L0,12 z" fill="#236c6a" />
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1400" height="900" />
+  <text class="title" x="700" y="60" text-anchor="middle">Snipe-IT System APIs</text>
+  <text class="body muted" x="700" y="95" text-anchor="middle">REST inventory API plus SCIM provisioning API, shown with a friendly stick-figure view</text>
+
+  <rect class="soft accent" x="60" y="155" width="250" height="250" rx="18" ry="18" />
+  <text class="label" x="185" y="190" text-anchor="middle">Integration Client</text>
+  <circle class="line" cx="185" cy="240" r="28" />
+  <line class="line" x1="185" y1="268" x2="185" y2="330" />
+  <line class="line" x1="145" y1="292" x2="225" y2="292" />
+  <line class="line" x1="185" y1="330" x2="152" y2="380" />
+  <line class="line" x1="185" y1="330" x2="218" y2="380" />
+  <text class="body" x="185" y="430" text-anchor="middle">Admin, script, or app</text>
+  <text class="small muted" x="185" y="458" text-anchor="middle">Calls /api/v1 with bearer auth</text>
+
+  <rect class="soft accent2" x="60" y="530" width="250" height="250" rx="18" ry="18" />
+  <text class="label" x="185" y="565" text-anchor="middle">Identity Provider</text>
+  <circle class="line" cx="185" cy="615" r="28" />
+  <line class="line" x1="185" y1="643" x2="185" y2="705" />
+  <line class="line" x1="145" y1="667" x2="225" y2="667" />
+  <line class="line" x1="185" y1="705" x2="152" y2="755" />
+  <line class="line" x1="185" y1="705" x2="218" y2="755" />
+  <text class="body" x="185" y="805" text-anchor="middle">Okta, Entra, HRIS</text>
+  <text class="small muted" x="185" y="833" text-anchor="middle">Calls /scim/v2 for provisioning</text>
+
+  <rect class="panel" x="390" y="135" width="360" height="280" rx="18" ry="18" />
+  <text class="label" x="570" y="180" text-anchor="middle">REST API</text>
+  <text class="body" x="570" y="220" text-anchor="middle">/api/v1</text>
+  <text class="small muted" x="570" y="255" text-anchor="middle">auth:api + api-throttle:api</text>
+  <text class="tiny" x="425" y="305">Core groups:</text>
+  <text class="tiny" x="425" y="335">hardware, accessories, components</text>
+  <text class="tiny" x="425" y="362">consumables, licenses, users, kits</text>
+  <text class="tiny" x="425" y="389">locations, settings, imports, reports</text>
+
+  <rect class="panel" x="390" y="505" width="360" height="220" rx="18" ry="18" />
+  <text class="label" x="570" y="550" text-anchor="middle">SCIM API</text>
+  <text class="body" x="570" y="590" text-anchor="middle">/scim/v2</text>
+  <text class="small muted" x="570" y="625" text-anchor="middle">public schema endpoints + secured provisioning</text>
+  <text class="tiny" x="425" y="675">ServiceProviderConfig, Schemas, ResourceTypes</text>
+  <text class="tiny" x="425" y="702">Users/Groups style provisioning routes</text>
+
+  <rect class="panel" x="835" y="185" width="250" height="200" rx="18" ry="18" />
+  <text class="label" x="960" y="230" text-anchor="middle">Laravel API Layer</text>
+  <text class="tiny" x="860" y="275">Routes</text>
+  <text class="tiny" x="860" y="302">Controllers</text>
+  <text class="tiny" x="860" y="329">Policies and middleware</text>
+  <text class="tiny muted" x="860" y="360">Returns JSON status/messages/payload</text>
+
+  <rect class="panel" x="835" y="470" width="250" height="190" rx="18" ry="18" />
+  <text class="label" x="960" y="515" text-anchor="middle">Domain Logic</text>
+  <text class="tiny" x="860" y="560">Models</text>
+  <text class="tiny" x="860" y="587">Transformers</text>
+  <text class="tiny" x="860" y="614">Checkout, audit, request flows</text>
+
+  <rect class="panel" x="1145" y="250" width="190" height="150" rx="18" ry="18" />
+  <text class="label" x="1240" y="295" text-anchor="middle">Data Stores</text>
+  <text class="tiny" x="1170" y="335">MySQL tables</text>
+  <text class="tiny" x="1170" y="362">oauth_access_tokens</text>
+
+  <rect class="panel" x="1145" y="500" width="190" height="150" rx="18" ry="18" />
+  <text class="label" x="1240" y="545" text-anchor="middle">File Storage</text>
+  <text class="tiny" x="1170" y="585">Uploads</text>
+  <text class="tiny" x="1170" y="612">labels, files, exports</text>
+
+  <path class="arrow" d="M310 280 C340 280, 350 280, 390 280" />
+  <path class="arrow2" d="M310 655 C340 655, 350 615, 390 615" />
+
+  <path class="arrow" d="M750 275 C800 275, 800 285, 835 285" />
+  <path class="arrow2" d="M750 615 C800 615, 800 560, 835 560" />
+
+  <path class="arrow" d="M1085 285 C1120 285, 1120 315, 1145 315" />
+  <path class="arrow2" d="M1085 560 C1120 560, 1120 565, 1145 565" />
+
+  <path class="arrow2" d="M960 385 C960 420, 960 430, 960 470" />
+
+  <text class="small muted" x="700" y="860" text-anchor="middle">Source of truth in this repo: routes/api.php, routes/scim.php, RouteServiceProvider, API controllers, and Helper::formatStandardApiResponse()</text>
+</svg>

@@ -1,0 +1,208 @@
+{
+  "info": {
+    "_postman_id": "9d598eef-29e6-4cb2-8c75-bf7e627612cb",
+    "name": "Young Industries API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Starter Postman collection for the Young Industries customized Snipe-IT REST API."
+  },
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{api_token}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "http://localhost:8000",
+      "type": "string"
+    },
+    {
+      "key": "api_token",
+      "value": "",
+      "type": "string"
+    },
+    {
+      "key": "asset_tag",
+      "value": "ASSET-001",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "Account",
+      "item": [
+        {
+          "name": "List Personal Access Tokens",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/account/personal-access-tokens",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "account",
+                "personal-access-tokens"
+              ]
+            },
+            "description": "Returns the authenticated user's personal access tokens."
+          },
+          "response": []
+        },
+        {
+          "name": "List Requestable Hardware",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/account/requestable/hardware",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "account",
+                "requestable",
+                "hardware"
+              ]
+            },
+            "description": "Lists hardware available to the authenticated user for request."
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "Inventory",
+      "item": [
+        {
+          "name": "List Hardware",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/hardware",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hardware"
+              ]
+            },
+            "description": "Returns the hardware inventory collection."
+          },
+          "response": []
+        },
+        {
+          "name": "Find Hardware By Tag",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/hardware/bytag/{{asset_tag}}",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "hardware",
+                "bytag",
+                "{{asset_tag}}"
+              ]
+            },
+            "description": "Finds a hardware asset by its asset tag."
+          },
+          "response": []
+        },
+        {
+          "name": "List Accessories",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/accessories",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "accessories"
+              ]
+            },
+            "description": "Returns the accessories collection."
+          },
+          "response": []
+        },
+        {
+          "name": "List Licenses",
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json",
+                "type": "text"
+              }
+            ],
+            "url": {
+              "raw": "{{base_url}}/api/v1/licenses",
+              "host": [
+                "{{base_url}}"
+              ],
+              "path": [
+                "api",
+                "v1",
+                "licenses"
+              ]
+            },
+            "description": "Returns the license collection."
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}
