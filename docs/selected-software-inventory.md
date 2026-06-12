@@ -30,7 +30,7 @@ The entries below are based on the repo configuration files, especially `README.
 | --- | --- | --- | --- | --- |
 | MongoDB | Environment variables provided for asset-request collections | Data store for the custom asset request extension | Optional, extension-specific | `.env.example` |
 | Firebase / Firestore | Environment variables provided for helpdesk collections and service account credentials | Data store for the tech-support/helpdesk extension | Optional, extension-specific | `.env.example` |
-| Ollama | `OLLAMA_ENABLED=false` and default model `llama3.2:latest` | Local AI/chatbot integration point | Optional, disabled by default | `.env.example` |
+| Ollama | `OLLAMA_ENABLED=false` and default model `llama3.2:latest` | Self-hosted or cloud-hosted AI/chatbot integration point | Optional, disabled by default | `.env.example` |
 | Redis | `php8.3-redis` installed in Docker image; Redis env vars provided | Optional cache/session/queue backend | Optional | `Dockerfile`, `.env.example` |
 | Memcached | `php-memcached` installed in Docker image; Memcached env vars provided | Optional cache backend | Optional | `Dockerfile`, `.env.example` |
 | Amazon S3 | Public/private S3 environment variables plus Flysystem AWS package | Optional file storage backend | Optional | `.env.example`, `composer.json` |

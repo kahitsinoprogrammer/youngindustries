@@ -2,6 +2,9 @@
 
 This guide is the recommended cloud deployment path for this repository when you want a public URL that a professor can use.
 
+> [!TIP]
+> If Railway is maxed out or unavailable, use [Cloud Demo Deployment Guide](cloud-demo-deployment-guide.md) for the recommended Northflank path and a small-VPS fallback.
+
 ## 1. Why not Vercel?
 
 Vercel is not a good fit for this project because this app is a full Laravel + PHP + MySQL application with persistent uploads and server-side storage needs.
@@ -206,7 +209,7 @@ Only do this if your professor must use those flows.
 | Asset request extension | MongoDB |
 | Tech support ticket flow | Firebase / Firestore |
 | Jira issue creation | Jira Cloud project + API credentials |
-| Asset chatbot | Ollama server |
+| Asset chatbot | Reachable Ollama-compatible server |
 
 If your demo goal is only to show the main asset-management system, leave these integrations disabled for the first deployment.
 

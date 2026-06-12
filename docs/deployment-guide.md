@@ -23,7 +23,7 @@ This guide covers the deployment of the Young Industries customized Snipe-IT pro
 | Memcached | Available Memcached service | Cache backend alternative | Optional |
 | Amazon S3 | AWS account and buckets | Public/private file storage backend | Optional |
 | Jira | Base URL, email, API token, project settings | Jira issue integration | Optional |
-| Ollama | Local or network-accessible Ollama instance | Local chatbot / AI extension | Optional |
+| Ollama | Local, self-hosted, or cloud-hosted Ollama-compatible endpoint | Asset chatbot / AI extension | Optional |
 | Docker and Docker Compose | Current stable release | Container-based deployment path | Optional |
 
 ## 2. Installation Steps
@@ -149,7 +149,7 @@ php artisan storage:link
 | --- | --- |
 | MongoDB | `MONGODB_URI`, `MONGODB_DATABASE`, `MONGODB_ASSET_REQUEST_COLLECTION`, `MONGODB_ASSET_REQUEST_APPROVER_COLLECTION`, `MONGODB_ASSET_REQUEST_TECHNICAL_SUPPORT_COLLECTION` |
 | Firebase / Firestore | `FIREBASE_PROJECT_ID`, `FIREBASE_DATABASE`, `FIREBASE_HELPDESK_COLLECTION`, `FIREBASE_SERVICE_ACCOUNT_JSON`, `FIREBASE_SERVICE_ACCOUNT_PATH`, `FIREBASE_TOKEN_URI`, `FIREBASE_FIRESTORE_BASE_URL` |
-| Ollama | `OLLAMA_ENABLED`, `OLLAMA_BASE_URL`, `OLLAMA_MODEL`, `OLLAMA_TIMEOUT` |
+| Ollama | `OLLAMA_ENABLED`, `OLLAMA_BASE_URL`, `OLLAMA_API_KEY`, `OLLAMA_AUTH_HEADER`, `OLLAMA_AUTH_SCHEME`, `OLLAMA_MODEL`, `OLLAMA_TIMEOUT` |
 | Redis | `REDIS_HOST`, `REDIS_PASSWORD`, `REDIS_PORT` |
 | Memcached | `MEMCACHED_HOST`, `MEMCACHED_PORT` |
 | Public S3 | `PUBLIC_AWS_SECRET_ACCESS_KEY`, `PUBLIC_AWS_ACCESS_KEY_ID`, `PUBLIC_AWS_DEFAULT_REGION`, `PUBLIC_AWS_BUCKET`, `PUBLIC_AWS_URL`, `PUBLIC_AWS_ENDPOINT`, `PUBLIC_AWS_PATH_STYLE`, `PUBLIC_AWS_BUCKET_ROOT` |
@@ -157,6 +157,17 @@ php artisan storage:link
 | General AWS | `AWS_ACCESS_KEY_ID`, `AWS_SECRET_ACCESS_KEY`, `AWS_DEFAULT_REGION` |
 | SAML | `REQUIRE_SAML`, `SAML_KEY_SIZE` |
 | Jira | `JIRA_BASE_URL`, `JIRA_EMAIL`, `JIRA_API_TOKEN`, `JIRA_PROJECT_KEY`, `JIRA_ISSUE_TYPE_TASK`, `JIRA_ISSUE_TYPE_BUG`, `JIRA_ISSUE_TYPE_INCIDENT`, `JIRA_ISSUE_TYPE_SERVICE_REQUEST`, `JIRA_TIMEOUT` |
+
+For direct Ollama Cloud API access, use an HTTPS base URL and API key instead of a local daemon, for example:
+
+```text
+OLLAMA_ENABLED=true
+OLLAMA_BASE_URL=https://ollama.com
+OLLAMA_API_KEY=your_api_key
+OLLAMA_AUTH_HEADER=Authorization
+OLLAMA_AUTH_SCHEME=Bearer
+OLLAMA_MODEL=your-cloud-enabled-model
+```
 
 ### 3.4 Container-specific variables
 

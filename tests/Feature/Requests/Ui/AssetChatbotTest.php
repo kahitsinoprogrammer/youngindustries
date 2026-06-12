@@ -29,11 +29,14 @@ class AssetChatbotTest extends TestCase
         $assignedUser = User::factory()->create();
 
         config()->set('services.ollama.enabled', true);
-        config()->set('services.ollama.base_url', 'http://127.0.0.1:11434');
+        config()->set('services.ollama.base_url', 'https://ollama.example.com');
+        config()->set('services.ollama.api_key', 'demo-token');
+        config()->set('services.ollama.auth_header', 'Authorization');
+        config()->set('services.ollama.auth_scheme', 'Bearer');
         config()->set('services.ollama.model', 'llama3.1:8b');
 
         Http::fake([
-            'http://127.0.0.1:11434/api/chat' => Http::response([
+            'https://ollama.example.com/api/chat' => Http::response([
                 'message' => [
                     'content' => json_encode([
                         'action' => 'list',
@@ -70,5 +73,10 @@ class AssetChatbotTest extends TestCase
             ->assertJsonMissing([
                 'asset_tag' => 'AST-READY-1',
             ]);
+
+        Http::assertSent(function ($request): bool {
+            return $request->url() === 'https://ollama.example.com/api/chat'
+                && $request->hasHeader('Authorization', 'Bearer demo-token');
+        });
     }
 }

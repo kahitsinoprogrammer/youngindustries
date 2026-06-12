@@ -51,6 +51,9 @@ return [
     'ollama' => [
         'enabled' => env('OLLAMA_ENABLED', false),
         'base_url' => env('OLLAMA_BASE_URL', 'http://127.0.0.1:11434'),
+        'api_key' => env('OLLAMA_API_KEY'),
+        'auth_header' => env('OLLAMA_AUTH_HEADER', 'Authorization'),
+        'auth_scheme' => env('OLLAMA_AUTH_SCHEME', 'Bearer'),
         'model' => env('OLLAMA_MODEL', 'llama3.2:latest'),
         'timeout' => env('OLLAMA_TIMEOUT', 45),
     ],

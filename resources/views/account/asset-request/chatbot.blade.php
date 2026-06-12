@@ -151,8 +151,11 @@
                             <p style="margin-bottom: 8px;">
                                 {{ $assistantStatus['message'] }}
                             </p>
+                            <p style="margin-bottom: 8px;">
+                                Current endpoint: <code>{{ $assistantStatus['base_url'] }}</code>
+                            </p>
                             <p style="margin-bottom: 0;">
-                                Set <code>OLLAMA_ENABLED=true</code>, make sure the local Ollama server is running, and pull the configured model <code>{{ $assistantStatus['model'] }}</code>.
+                                Set <code>OLLAMA_ENABLED=true</code>, point <code>OLLAMA_BASE_URL</code> at a reachable Ollama-compatible endpoint, add <code>OLLAMA_API_KEY</code> if your provider requires it, and make sure model <code>{{ $assistantStatus['model'] }}</code> is available there.
                             </p>
                         </div>
                     @endif

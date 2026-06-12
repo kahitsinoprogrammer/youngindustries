@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Http\Client\PendingRequest;
 use Illuminate\Support\Facades\Http;
 
 class OllamaService
@@ -26,9 +27,7 @@ class OllamaService
         }
 
         try {
-            $response = Http::baseUrl($status['base_url'])
-                ->acceptJson()
-                ->timeout(min(5, $this->timeout()))
+            $response = $this->client(min(5, $this->timeout()))
                 ->get('/api/tags')
                 ->throw();
 
@@ -45,11 +44,14 @@ class OllamaService
                 return $status;
             }
 
-            $status['message'] = 'Ollama is reachable, but the configured model is not available locally.';
+            $status['message'] = 'Ollama is reachable, but the configured model is not available on that server.';
 
             return $status;
         } catch (\Throwable) {
-            $status['message'] = 'Ollama is not reachable at the configured local endpoint.';
+            $status['message'] = str_contains($status['base_url'], '127.0.0.1')
+                || str_contains($status['base_url'], 'localhost')
+                ? 'Ollama is not reachable at the configured endpoint. The app is still pointing to a local Ollama host.'
+                : 'Ollama is not reachable at the configured endpoint.';
 
             return $status;
         }
@@ -145,9 +147,7 @@ PROMPT;
     private function chat(array $messages, array $schema): ?string
     {
         try {
-            $response = Http::baseUrl($this->baseUrl())
-                ->acceptJson()
-                ->timeout($this->timeout())
+            $response = $this->client($this->timeout())
                 ->post('/api/chat', [
                     'model' => $this->model(),
                     'messages' => $messages,
@@ -167,9 +167,47 @@ PROMPT;
         }
     }
 
+    private function client(int $timeout): PendingRequest
+    {
+        $request = Http::baseUrl($this->baseUrl())
+            ->acceptJson()
+            ->timeout($timeout);
+
+        $apiKey = $this->apiKey();
+
+        if ($apiKey === '') {
+            return $request;
+        }
+
+        $header = $this->authHeader();
+        $scheme = $this->authScheme();
+        $value = $scheme !== '' ? "{$scheme} {$apiKey}" : $apiKey;
+
+        return $request->withHeaders([
+            $header => $value,
+        ]);
+    }
+
     private function baseUrl(): string
     {
         return rtrim((string) config('services.ollama.base_url', 'http://127.0.0.1:11434'), '/');
+    }
+
+    private function apiKey(): string
+    {
+        return trim((string) config('services.ollama.api_key', ''));
+    }
+
+    private function authHeader(): string
+    {
+        $header = trim((string) config('services.ollama.auth_header', 'Authorization'));
+
+        return $header !== '' ? $header : 'Authorization';
+    }
+
+    private function authScheme(): string
+    {
+        return trim((string) config('services.ollama.auth_scheme', 'Bearer'));
     }
 
     private function model(): string
