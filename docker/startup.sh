@@ -1,3 +1,20 @@
+echo "Checking Firebase secret file..."
+
+if [ -f "/etc/secrets/firebase-service-account.json" ]; then
+  echo "Firebase secret file found."
+  mkdir -p /var/www/html/storage/app/firebase
+  cp /etc/secrets/firebase-service-account.json /var/www/html/storage/app/firebase/service-account.json
+  chown docker:staff /var/www/html/storage/app/firebase/service-account.json
+  chmod 600 /var/www/html/storage/app/firebase/service-account.json
+else
+  echo "Firebase secret file NOT found."
+fi
+
+php artisan config:clear
+php artisan cache:clear
+php artisan route:clear
+php artisan view:clear
+
 #!/bin/bash
 
 # Cribbed from nextcloud docker official repo
