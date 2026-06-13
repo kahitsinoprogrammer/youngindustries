@@ -1,3 +1,4 @@
+#!/bin/bash
 echo "Checking Firebase secret file..."
 
 if [ -f "/etc/secrets/firebase-service-account.json" ]; then
@@ -15,7 +16,7 @@ php artisan cache:clear
 php artisan route:clear
 php artisan view:clear
 
-#!/bin/bash
+
 
 # Cribbed from nextcloud docker official repo
 # https://github.com/nextcloud/docker/blob/master/docker-entrypoint.sh
