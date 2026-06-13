@@ -53,6 +53,13 @@ RUN php go-pear.phar
 RUN phpenmod gd
 RUN phpenmod bcmath
 
+# Install MongoDB PHP extension
+RUN pecl channel-update pecl.php.net \
+    && pecl install mongodb \
+    && echo "extension=mongodb.so" > /etc/php/8.3/mods-available/mongodb.ini \
+    && phpenmod mongodb \
+    && php -m | grep mongodb
+
 RUN sed -i 's/variables_order = .*/variables_order = "EGPCS"/' /etc/php/8.3/apache2/php.ini
 RUN sed -i 's/variables_order = .*/variables_order = "EGPCS"/' /etc/php/8.3/cli/php.ini
 
